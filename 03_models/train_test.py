@@ -61,7 +61,6 @@ def run_epoch_f(args, mode, model, criterion, optimizer,
             with torch.no_grad(): 
                 pred_score = model(X_token_ids, X_token_types, X_att_masks)
                 # Compute loss
-                pred_score = pred_score.view(-1)
                 loss = criterion(pred_score, Y_labels)
         
         # Book-keeping
